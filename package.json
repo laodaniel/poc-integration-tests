@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
     "test": "node test.spec.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }
