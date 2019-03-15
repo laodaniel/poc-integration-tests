@@ -1,18 +1,15 @@
-const {remote} = require('webdriverio');
+const puppeteer = require('puppeteer');
 
-(async () => {
-  const browser = await remote({
-    logLevel: 'error',
-    path: '/',
-    capabilities: {
-      browserName: 'firefox',
-    },
-  });
+describe('Check mobile website is up', () => {
+  it('should have id app in the dom', async() => {
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
 
-  await browser.url('https://webdriver.io');
+    const page = await browser.newPage();
 
-  const title = await browser.getTitle();
-  console.log('Title was: ' + title);
-
-  await browser.deleteSession();
-})().catch(e => console.error(e));
+    await page.goto('http://m.weekendesk.fr');
+    expect(await page.$('#app')).not.toBeNull();
+    await browser.close();
+  })
+})

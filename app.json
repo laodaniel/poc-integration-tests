@@ -1,0 +1,9 @@
+{
+  "environments": {
+    "test": {
+      "env": {
+        "HEROKU_UAT": "enabled"
+      }
+    }
+  }
+}
