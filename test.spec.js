@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const HEROKU_UAT_APP_WEB_URL = process.env.HEROKU_UAT_APP_WEB_URL || 'http://localhost:8080';
+const HEROKU_UAT_APP_WEB_URL = process.env.HEROKU_UAT_APP_WEB_URL || 'http://m.weekendesk.fr';
 const locale = 'fr_FR';
 
 describe('Check mobile website is up', () => {

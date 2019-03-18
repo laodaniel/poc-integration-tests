@@ -1,6 +1,19 @@
 {
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }, {
+      "url": "https://github.com/jontewks/puppeteer-heroku-buildpack"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "yarn test:integration"
+  },
   "environments": {
     "test": {
+      "scripts": {
+        "test": "yarn test"
+      },
       "env": {
         "HEROKU_UAT": "enabled"
       }

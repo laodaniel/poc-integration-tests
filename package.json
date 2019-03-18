@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "test": "jest test.spec.js"
+    "test": "jest test.js",
+    "test:integration": "jest test.spec.js"
   },
   "dependencies": {
     "express": "^4.16.4",
